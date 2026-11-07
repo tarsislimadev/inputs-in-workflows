@@ -1,0 +1,15 @@
+name: Example
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Explain environment
+        required: true
+        default: production
+
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.event.inputs.environment }}"
